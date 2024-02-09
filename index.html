@@ -9,18 +9,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./main.css">
-  <script src="./index.js"></script>
+  <script src="./index.js" defer></script>
 </head>
 <body>
   <header>
     <h1 class="tit nanum">Image Slider</h1>
   </header>
   <section>
-    <article></article>
+    <article class="pic"></article>
     <div class="btnWrap">
-      <button class="nanum"> < prev</button>
-      <button class="nanum">next > </button>
+      <button class="nanum prev" onclick="slideClick('prev')"> < prev</button>
+      <button class="nanum next" onclick="slideClick('next')">next > </button>
     </div>
+    <div class="now"></div>
   </section>
   <footer>
     <p class="license">ⓒ2024 이승헌 all rights reserved</p>
