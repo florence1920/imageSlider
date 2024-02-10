@@ -1,17 +1,19 @@
-// 1. 처음에 이미지 정보 배열로 가지고 있어야 함
-// 2. 클릭할 때 마다 해당 이미지가 나와야 함 처음이 0번 next를 누르면 +1 (예외처리 버튼이 안나오게)
+
+// 버튼 선언
 let prevBtn = document.querySelector('.prev');
 let nextBtn = document.querySelector('.next');
+// 그림 들어가는 곳 선언
 let pic = document.querySelector('.pic');
+// 넣을 그림
 let photoInfo = [
   './image/팰.jpg','./image/팰1.jpg','./image/팰2.jpg','./image/팰3.jpg'
 ]
-
-
+// 클릭 했을 때 증가할 수
 let nowNum = 0;
+// 그림 수
 let maxNum = photoInfo.length - 1;
-console.log(`maxNum = ${maxNum}`)
 
+// prev,next 클릭했을 때
 function slideClick(direction){
   if(direction === 'prev'){
     nowNum = nowNum - 1;
@@ -21,13 +23,14 @@ function slideClick(direction){
     showPic(nowNum);
   }
   checkNum();
-  console.log(`nowNum = ${nowNum}`)
 }
 
+// 번호에 맞는 그림 나오기
 function showPic(num){
   pic.style.backgroundImage = `url(${photoInfo[num]})`;  
 }
 
+// 번호에 따라 prev,next 번호 노출
 function checkNum(){
   if(nowNum == 0){
     prevBtn.style.display = 'none'
